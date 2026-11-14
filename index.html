@@ -1,0 +1,428 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Zihui Ge — Director, Inventive Science, AT&amp;T Labs</title>
+<meta name="description" content="Zihui Ge — Director of Inventive Science at AT&amp;T Labs, working on data-driven analytics and automation for large-scale cellular and IP networks.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #fbfaf7;
+    --surface: #ffffff;
+    --ink: #1c1b19;
+    --ink-2: #4a4843;
+    --ink-3: #7a776f;
+    --rule: #e6e2d9;
+    --accent: #1f4e79;
+    --accent-soft: #e8eef5;
+    --serif: "Newsreader", Georgia, "Times New Roman", serif;
+    --sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    color-scheme: light;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #141413;
+      --surface: #1c1c1a;
+      --ink: #ecebe6;
+      --ink-2: #bdbab2;
+      --ink-3: #8c8981;
+      --rule: #2e2d2a;
+      --accent: #8fb6dd;
+      --accent-soft: #1f2a36;
+      color-scheme: dark;
+    }
+  }
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font: 16px/1.6 var(--sans);
+    padding: env(safe-area-inset-top, 0) 20px env(safe-area-inset-bottom, 0);
+  }
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; text-underline-offset: 3px; }
+  .wrap { max-width: 860px; margin: 0 auto; }
+
+  /* Header */
+  header.hero { padding-block: 72px 40px; border-bottom: 1px solid var(--rule); }
+  .hero h1 {
+    font: 500 clamp(2.4rem, 6vw, 3.4rem)/1.05 var(--serif);
+    letter-spacing: -0.015em;
+    margin: 0 0 12px;
+  }
+  .hero .role { font-size: 1.1rem; color: var(--ink-2); margin: 0 0 24px; }
+  .links { display: flex; flex-wrap: wrap; gap: 8px; list-style: none; padding: 0; margin: 0; }
+  .links a {
+    display: inline-block; font-size: 0.875rem; font-weight: 500;
+    padding: 6px 14px; border: 1px solid var(--rule); border-radius: 999px;
+    color: var(--ink); background: var(--surface);
+  }
+  .links a:hover { border-color: var(--accent); color: var(--accent); text-decoration: none; }
+
+  nav.toc {
+    position: sticky; top: env(safe-area-inset-top, 0); z-index: 5;
+    background: color-mix(in srgb, var(--bg) 92%, transparent);
+    backdrop-filter: blur(6px);
+    border-bottom: 1px solid var(--rule);
+  }
+  nav.toc ul { display: flex; gap: 24px; list-style: none; margin: 0 auto; padding: 12px 0; max-width: 860px; overflow-x: auto; }
+  nav.toc a { color: var(--ink-3); font-size: 0.875rem; font-weight: 500; white-space: nowrap; }
+  nav.toc a:hover { color: var(--ink); text-decoration: none; }
+
+  section { padding-block: 48px; border-bottom: 1px solid var(--rule); }
+  section:last-of-type { border-bottom: 0; }
+  h2 {
+    font: 600 0.78rem/1 var(--sans); letter-spacing: 0.12em; text-transform: uppercase;
+    color: var(--ink-3); margin: 0 0 24px;
+  }
+  .lede { font: 400 1.3rem/1.55 var(--serif); color: var(--ink); margin: 0 0 16px; }
+  p { margin: 0 0 14px; color: var(--ink-2); }
+
+  /* Stats */
+  .stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 1px; background: var(--rule); border: 1px solid var(--rule); border-radius: 10px; overflow: hidden; margin-top: 28px; }
+  .stat { background: var(--surface); padding: 18px 20px; }
+  .stat b { display: block; font: 500 1.8rem/1.1 var(--serif); color: var(--ink); }
+  .stat span { font-size: 0.82rem; color: var(--ink-3); }
+
+  /* Research areas */
+  .areas { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; }
+  .area { background: var(--surface); border: 1px solid var(--rule); border-radius: 10px; padding: 20px; }
+  .area h3 { font: 600 1.05rem/1.3 var(--serif); margin: 0 0 8px; color: var(--ink); }
+  .area p { font-size: 0.92rem; margin: 0 0 10px; }
+  .area .eg { font-size: 0.8rem; color: var(--ink-3); margin: 0; }
+
+  /* Timeline */
+  .timeline { list-style: none; margin: 0; padding: 0; }
+  .timeline li { display: grid; grid-template-columns: 120px 1fr; gap: 16px; padding: 12px 0; border-top: 1px solid var(--rule); }
+  .timeline li:first-child { border-top: 0; }
+  .timeline .when { color: var(--ink-3); font-size: 0.9rem; font-variant-numeric: tabular-nums; }
+  .timeline .what b { display: block; color: var(--ink); font-weight: 600; }
+  .timeline .what span { color: var(--ink-2); font-size: 0.95rem; }
+
+  /* Publications */
+  ol.pubs { list-style: none; margin: 0; padding: 0; }
+  ol.pubs li { padding: 14px 0; border-top: 1px solid var(--rule); display: flex; flex-direction: column; gap: 3px; }
+  ol.pubs li:first-child { border-top: 0; }
+  .pubs .title { font: 500 1.08rem/1.4 var(--serif); color: var(--ink); }
+  .pubs .title a { color: var(--ink); }
+  .pubs .title a:hover { color: var(--accent); }
+  .pubs .authors { font-size: 0.88rem; color: var(--ink-2); }
+  .pubs .authors strong { color: var(--ink); font-weight: 600; }
+  .pubs .meta { font-size: 0.84rem; color: var(--ink-3); display: flex; flex-wrap: wrap; gap: 4px 10px; }
+  .pubs .venue { color: var(--accent); font-weight: 500; }
+  .year-head { font: 500 1.4rem/1 var(--serif); color: var(--ink-3); margin: 32px 0 4px; }
+
+  details.all { margin-top: 32px; }
+  details.all summary {
+    cursor: pointer; list-style: none; display: inline-flex; align-items: center; gap: 8px;
+    font-weight: 500; font-size: 0.95rem; color: var(--accent);
+    padding: 10px 16px; border: 1px solid var(--rule); border-radius: 8px; background: var(--surface);
+  }
+  details.all summary::-webkit-details-marker { display: none; }
+  details.all summary::before { content: "+"; font-weight: 600; }
+  details.all[open] summary::before { content: "−"; }
+  .filter { margin: 20px 0 0; width: 100%; max-width: 420px; padding: 10px 14px; font: inherit; font-size: 0.95rem; border: 1px solid var(--rule); border-radius: 8px; background: var(--surface); color: var(--ink); }
+  .filter:focus { outline: 2px solid var(--accent); outline-offset: 1px; }
+  .note { font-size: 0.82rem; color: var(--ink-3); margin-top: 16px; }
+
+  footer { padding-block: 32px 56px; color: var(--ink-3); font-size: 0.82rem; }
+
+  @media (max-width: 560px) {
+    header.hero { padding-block: 48px 32px; }
+    .timeline li { grid-template-columns: 1fr; gap: 2px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <header class="hero">
+    <h1>Zihui Ge</h1>
+    <p class="role">Director – Inventive Science, AT&amp;T Labs – Research · Bedminster, New Jersey.<br>Data-driven analytics and automation for large-scale cellular and IP networks.</p>
+    <ul class="links">
+      <li><a href="mailto:gezihui@gmail.com">gezihui@gmail.com</a></li>
+      <li><a href="https://www.linkedin.com/in/gezihui/">LinkedIn</a></li>
+      <li><a href="https://orcid.org/0000-0003-0114-7584">ORCID</a></li>
+      <li><a href="https://www.researchgate.net/profile/Zihui-Ge">ResearchGate</a></li>
+      <li><a href="https://openalex.org/A5076892155">OpenAlex</a></li>
+      <li><a href="https://www.patentleaderboard.com/att/zihui-ge/47105">Patents</a></li>
+    </ul>
+  </header>
+</div>
+
+<nav class="toc" aria-label="Sections">
+  <ul>
+    <li><a href="#about">About</a></li>
+    <li><a href="#research">Research</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#education">Education</a></li>
+    <li><a href="#publications">Publications</a></li>
+  </ul>
+</nav>
+
+<main class="wrap">
+  <section id="about">
+    <h2>About</h2>
+    <p class="lede">I have spent two decades as a researcher and research manager, creating AI/ML and data-analytics technologies that solve critical business problems in running one of the world's largest networks.</p>
+    <p>At AT&amp;T Labs – Research, I lead work that turns operational data from cellular and IP networks into practical tools. These tools assess the impact of network changes and upgrades, find the root cause of service problems, detect anomalies, and recommend configurations for LTE and 5G radio networks. I use design thinking to reach practical, effective solutions, and most of my inventions have been built into software systems deployed in real business operations. The research has been published at venues including ACM SIGCOMM, MobiCom, IMC, CoNEXT, SIGMETRICS, and IEEE INFOCOM.</p>
+    <p>I am an inventor or co-inventor on over 50 US patents (<a href="https://www.patentleaderboard.com/att/zihui-ge/47105">see list</a>). I am a skilled full-stack software developer, and I manage a team of creative researchers who work together to deliver strong business results. I also enjoy mentoring research interns and working with academic collaborators.</p>
+    <div class="stats">
+      <div class="stat"><b>79</b><span>publications, 2001–2025</span></div>
+      <div class="stat"><b>50+</b><span>US patents</span></div>
+      <div class="stat"><b>20+</b><span>years in research &amp; research management</span></div>
+      <div class="stat"><b>Ph.D.</b><span>Computer Science, UMass Amherst</span></div>
+    </div>
+  </section>
+
+  <section id="research">
+    <h2>Research Areas</h2>
+    <div class="areas">
+      <div class="area">
+        <h3>Cellular configuration intelligence</h3>
+        <p>Learning from network context to recommend and tune LTE/5G configurations, even when confounding factors are present.</p>
+        <p class="eg">Iridescence · Chroma · Aurora · Auric</p>
+      </div>
+      <div class="area">
+        <h3>Change &amp; upgrade impact assessment</h3>
+        <p>Rigorous, statistically sound ways to tell whether software upgrades, configuration changes, and maintenance help or hurt service.</p>
+        <p class="eg">Mercury · Litmus · Magus · Reflection</p>
+      </div>
+      <div class="area">
+        <h3>Service quality &amp; root cause analysis</h3>
+        <p>Platforms that detect end-to-end service problems and diagnose them across large IP, IPTV, and mobile networks.</p>
+        <p class="eg">G-RCA · Argus · Giza · ABSENCE</p>
+      </div>
+      <div class="area">
+        <h3>Network measurement &amp; traffic analysis</h3>
+        <p>Traffic matrix estimation, network anomography, data sketching, and mining large volumes of syslog and management data.</p>
+        <p class="eg">Anomography · Crossroads · NetSearch</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="experience">
+    <h2>Experience</h2>
+    <ul class="timeline">
+      <li><span class="when">Sep 2017 – present</span><span class="what"><b>Director – Inventive Science</b><span>AT&amp;T Labs – Research</span></span></li>
+      <li><span class="when">Nov 2013 – Sep 2017</span><span class="what"><b>Lead Inventive Scientist</b><span>AT&amp;T Labs – Research</span></span></li>
+      <li><span class="when">May 2008 – Nov 2013</span><span class="what"><b>Principal Member of Technical Staff</b><span>AT&amp;T Labs – Research</span></span></li>
+      <li><span class="when">Feb 2007 – May 2008</span><span class="what"><b>Research Scientist – Director of Search Engine Research</b><span>Adverplex</span></span></li>
+      <li><span class="when">2004 – 2007</span><span class="what"><b>Senior Member of Technical Staff</b><span>AT&amp;T Labs – Research</span></span></li>
+    </ul>
+  </section>
+
+  <section id="education">
+    <h2>Education</h2>
+    <ul class="timeline">
+      <li><span class="when">2000 – 2003</span><span class="what"><b>Ph.D., Computer Science</b><span>University of Massachusetts Amherst · Dissertation: <em>Interest-based content retrieval and dissemination in distributed environments</em></span></span></li>
+      <li><span class="when">1998 – 2000</span><span class="what"><b>M.A., Computer Science</b><span>Boston University</span></span></li>
+      <li><span class="when">1993 – 1998</span><span class="what"><b>B.S., Computer Science</b><span>Tsinghua University</span></span></li>
+    </ul>
+  </section>
+
+  <section id="publications">
+    <h2>Selected Publications</h2>
+    <ol class="pubs">
+<li><span class="title"><a href="https://doi.org/10.1145/3709378">Iridescence: Improving Configuration Tuning in the Presence of Confounders for 5G NSA Networks</a></span><span class="authors">Changhan Ge, Ajay Anil Mahimkar, <strong>Zihui Ge</strong>, Romeo Fernandez, Joseph Maniaci, Shomik Pathak, Maulik Shah</span><span class="meta"><span class="venue">Proceedings of the ACM on Networking</span><span class="year">2025</span></span></li>
+<li><span class="title"><a href="https://doi.org/10.1145/3570361.3613256">Chroma: Learning and Using Network Contexts to Reinforce Performance Improving Configurations</a></span><span class="authors">Changhan Ge, <strong>Zihui Ge</strong>, Xuan Liu, Ajay Anil Mahimkar, Yusef Shaqalle, Yu Xiang, Shomik Pathak</span><span class="meta"><span class="venue">ACM MobiCom</span><span class="year">2023</span></span></li>
+<li><span class="title"><a href="https://doi.org/10.1145/3517745.3561455">Aurora: conformity-based configuration recommendation to improve LTE/5G service</a></span><span class="authors">Ajay Anil Mahimkar, <strong>Zihui Ge</strong>, Xuan Liu, Yusef Shaqalle, Xiang Yu, Jennifer M. Yates, Shomik Pathak, Rick Reichel</span><span class="meta"><span class="venue">ACM IMC</span><span class="year">2022</span></span></li>
+<li><span class="title"><a href="https://doi.org/10.1145/3452296.3472906">Auric: using data-driven recommendation to automatically generate cellular configuration</a></span><span class="authors">Ajay Anil Mahimkar, Ashiwan Sivakumar, <strong>Zihui Ge</strong>, Shomik Pathak, Karunasish Biswas</span><span class="meta"><span class="venue">ACM SIGCOMM</span><span class="year">2021</span></span></li>
+<li><span class="title"><a href="https://doi.org/10.1145/2716281.2836106">Magus: minimizing cellular service disruption during network upgrades</a></span><span class="authors">Xing Xu, Ioannis Broustis, <strong>Zihui Ge</strong>, Ramesh Govindan, Ajay Anil Mahimkar, N.K. Shankaranarayanan, Jia Wang</span><span class="meta"><span class="venue">ACM CoNEXT</span><span class="year">2015</span></span></li>
+<li><span class="title"><a href="https://doi.org/10.1145/2789168.2790127">ABSENCE: Usage-based Failure Detection in Mobile Networks</a></span><span class="authors">Binh Nguyen, <strong>Zihui Ge</strong>, Jacobus Van der Merwe, He Yan, Jennifer M. Yates</span><span class="meta"><span class="venue">ACM MobiCom</span><span class="year">2015</span></span></li>
+<li><span class="title"><a href="https://doi.org/10.1145/1851182.1851219">Detecting the performance impact of upgrades in large operational networks</a></span><span class="authors">Ajay Anil Mahimkar, Han Hee Song, <strong>Zihui Ge</strong>, Aman Shaikh, Jia Wang, Jennifer M. Yates, Yin Zhang, Joanne Emmons</span><span class="meta"><span class="venue">ACM SIGCOMM</span><span class="year">2010</span></span></li>
+<li><span class="title"><a href="https://doi.org/10.1109/tnet.2012.2188837">G-RCA: A Generic Root Cause Analysis Platform for Service Quality Management in Large IP Networks</a></span><span class="authors">He Yan, Lee Breslau, <strong>Zihui Ge</strong>, Dan Massey, Dan Pei, Jennifer M. Yates</span><span class="meta"><span class="venue">IEEE/ACM Transactions on Networking</span><span class="year">2012</span></span></li>
+<li><span class="title"><a href="https://doi.org/10.1145/1592568.1592596">Towards automated performance diagnosis in a large IPTV network</a></span><span class="authors">Ajay Anil Mahimkar, <strong>Zihui Ge</strong>, Aman Shaikh, Jia Wang, Jennifer M. Yates, Yin Zhang, Qi Zhao</span><span class="meta"><span class="venue">ACM SIGCOMM</span><span class="year">2009</span></span></li>
+<li><span class="title"><a href="https://doi.org/10.1145/1330107.1330146">Network anomography</a></span><span class="authors">Yin Zhang, <strong>Zihui Ge</strong>, Albert G. Greenberg, Matthew Roughan</span><span class="meta"><span class="venue">ACM IMC</span><span class="year">2005</span></span></li>
+    </ol>
+
+    <details class="all" id="all-pubs">
+      <summary>All 79 publications</summary>
+      <input class="filter" type="search" placeholder="Filter by title, author, venue, or year…" aria-label="Filter publications">
+      <div class="all-list">
+<h3 class="year-head">2025</h3>
+<ol class="pubs">
+<li><span class="title"><a href="https://doi.org/10.1145/3709378">Iridescence: Improving Configuration Tuning in the Presence of Confounders for 5G NSA Networks</a></span><span class="authors">Changhan Ge, Ajay Anil Mahimkar, <strong>Zihui Ge</strong>, Romeo Fernandez, Joseph Maniaci, Shomik Pathak, Maulik Shah</span><span class="meta"><span class="venue">Proceedings of the ACM on Networking</span><span class="year">2025</span></span></li>
+</ol>
+<h3 class="year-head">2023</h3>
+<ol class="pubs">
+<li><span class="title"><a href="https://doi.org/10.1145/3570361.3613256">Chroma: Learning and Using Network Contexts to Reinforce Performance Improving Configurations</a></span><span class="authors">Changhan Ge, <strong>Zihui Ge</strong>, Xuan Liu, Ajay Anil Mahimkar, Yusef Shaqalle, Yu Xiang, Shomik Pathak</span><span class="meta"><span class="venue">ACM MobiCom</span><span class="year">2023</span></span></li>
+</ol>
+<h3 class="year-head">2022</h3>
+<ol class="pubs">
+<li><span class="title"><a href="https://doi.org/10.1145/3517745.3561455">Aurora: conformity-based configuration recommendation to improve LTE/5G service</a></span><span class="authors">Ajay Anil Mahimkar, <strong>Zihui Ge</strong>, Xuan Liu, Yusef Shaqalle, Xiang Yu, Jennifer M. Yates, Shomik Pathak, Rick Reichel</span><span class="meta"><span class="venue">ACM IMC</span><span class="year">2022</span></span></li>
+</ol>
+<h3 class="year-head">2021</h3>
+<ol class="pubs">
+<li><span class="title"><a href="https://doi.org/10.1145/3452296.3472906">Auric: using data-driven recommendation to automatically generate cellular configuration</a></span><span class="authors">Ajay Anil Mahimkar, Ashiwan Sivakumar, <strong>Zihui Ge</strong>, Shomik Pathak, Karunasish Biswas</span><span class="meta"><span class="venue">ACM SIGCOMM</span><span class="year">2021</span></span></li>
+<li><span class="title"><a href="https://doi.org/10.23919/ifipnetworking52078.2021.9472779">Minimizing Effort and Risk with Network Change Deployment Planning</a></span><span class="authors">Carlos E. Andrade, Ajay Anil Mahimkar, Rakesh Sinha, Weiyi Zhang, André A. Ciré, Giritharan Rana, <strong>Zihui Ge</strong>, Sarat C. Puthenpura, Jennifer M. Yates, Robert Riding</span><span class="meta"><span class="venue">IFIP Networking</span><span class="year">2021</span></span></li>
+</ol>
+<h3 class="year-head">2019</h3>
+<ol class="pubs">
+<li><span class="title"><a href="https://doi.org/10.1145/3359989.3365409">Egret: simplifying traffic management for physical and virtual network functions</a></span><span class="authors">Yikai Lin, Ajay Anil Mahimkar, Bo Han, <strong>Zihui Ge</strong>, Vijay Gopalakrishnan, Zhuoqing Morley Mao</span><span class="meta"><span class="venue">ACM CoNEXT</span><span class="year">2019</span></span></li>
+<li><span class="title"><a href="https://doi.org/10.1109/dsn.2019.00037">Rigorous, Effortless and Timely Assessment of Cellular Network Changes</a></span><span class="authors">Ajay Anil Mahimkar, <strong>Zihui Ge</strong>, Sanjeev Ahuja, Shomik Pathak, Nauman Shafi</span><span class="meta"><span class="venue">IEEE/IFIP DSN</span><span class="year">2019</span></span></li>
+</ol>
+<h3 class="year-head">2018</h3>
+<ol class="pubs">
+<li><span class="title"><a href="https://doi.org/10.1201/9781351130165-9">Artificial Intelligence for Network Operations</a></span><span class="authors">Jennifer Yates, <strong>Zihui Ge</strong></span><span class="meta"><span class="venue">Book chapter, CRC Press</span><span class="year">2018</span></span></li>
+<li><span class="title"><a href="https://doi.org/10.1145/3278532.3278547">Predictive Analysis in Network Function Virtualization</a></span><span class="authors">Zhijing Li, <strong>Zihui Ge</strong>, Ajay Anil Mahimkar, Jia Wang, Ben Y. Zhao, Hai-Tao Zheng, Joanne Emmons, Laura Ogden</span><span class="meta"><span class="venue">ACM IMC</span><span class="year">2018</span></span></li>
+</ol>
+<h3 class="year-head">2017</h3>
+<ol class="pubs">
+<li><span class="title"><a href="https://doi.org/10.1145/3097983.3098157">AESOP: Automatic Policy Learning for Predicting and Mitigating Network Service Impairments</a></span><span class="authors">Supratim Deb, <strong>Zihui Ge</strong>, Sastry Isukapalli, Sarat C. Puthenpura, Shobha Venkataraman, He Yan, Jennifer M. Yates</span><span class="meta"><span class="venue">ACM KDD</span><span class="year">2017</span></span></li>
+<li><span class="title"><a href="https://doi.org/10.23919/cnsm.2017.8255986">AutoFocus: Automatically scoping the impact of anomalous service events</a></span><span class="authors">Ren Quinn, <strong>Zihui Ge</strong>, He Yan, Jacobus Van der Merwe</span><span class="meta"><span class="venue">CNSM</span><span class="year">2017</span></span></li>
+<li><span class="title"><a href="https://doi.org/10.1109/icnp.2017.8117537">Coordinating rolling software upgrades for cellular networks</a></span><span class="authors">Mubashir Adnan Qureshi, Ajay Anil Mahimkar, Lili Qiu, <strong>Zihui Ge</strong>, Max Zhang, Ioannis Broustis</span><span class="meta"><span class="venue">IEEE ICNP</span><span class="year">2017</span></span></li>
+<li><span class="title"><a href="https://doi.org/10.1109/tnet.2017.2761758">Detecting and Localizing End-to-End Performance Degradation for Cellular Data Services Based on TCP Loss Ratio and Round Trip Time</a></span><span class="authors">Faraz Ahmed, Jeffrey Erman, <strong>Zihui Ge</strong>, Alex X. Liu, Jia Wang, He Yan</span><span class="meta"><span class="venue">IEEE/ACM Transactions on Networking</span><span class="year">2017</span></span></li>
+<li><span class="title"><a href="https://doi.org/10.1109/tifs.2017.2668602">Firewall Fingerprinting and Denial of Firewalling Attacks</a></span><span class="authors">Alex X. Liu, Amir R. Khakpour, Joshua W. Hulst, <strong>Zihui Ge</strong>, Dan Pei, Jia Wang</span><span class="meta"><span class="venue">IEEE Transactions on Information Forensics and Security</span><span class="year">2017</span></span></li>
+<li><span class="title"><a href="https://doi.org/10.1109/infocom.2017.8057165">Monitoring quality-of-experience for operational cellular networks using machine-to-machine traffic</a></span><span class="authors">Faraz Ahmed, Jeffrey Erman, <strong>Zihui Ge</strong>, Alex X. Liu, Jia Wang, He Yan</span><span class="meta"><span class="venue">IEEE INFOCOM</span><span class="year">2017</span></span></li>
+<li><span class="title"><a href="https://doi.org/10.1145/3154488">Predictive Impact Analysis for Designing a Resilient Cellular Backhaul Network</a></span><span class="authors">Sen Yang, Yan He, <strong>Zihui Ge</strong>, Dongmei Wang, Jun Jim Xu</span><span class="meta"><span class="venue">ACM POMACS (SIGMETRICS)</span><span class="year">2017</span></span></li>
+<li><span class="title"><a href="https://doi.org/10.1109/icnp.2017.8117553">Reflection: Automated test location selection for cellular network upgrades</a></span><span class="authors">Mubashir Adnan Qureshi, Ajay Anil Mahimkar, Lili Qiu, <strong>Zihui Ge</strong>, Sarat C. Puthenpura, Nabeel Mir, Sanjeev Ahuja</span><span class="meta"><span class="venue">IEEE ICNP</span><span class="year">2017</span></span></li>
+</ol>
+<h3 class="year-head">2016</h3>
+<ol class="pubs">
+<li><span class="title"><a href="https://doi.org/10.1145/2896377.2901505">Automated Test Location Selection For Cellular Network Upgrades</a></span><span class="authors">Mubashir Adnan Qureshi, Ajay Anil Mahimkar, Lili Qiu, <strong>Zihui Ge</strong>, Sarat C. Puthenpura, Nabeel Mir, Sanjeev Ahuja</span><span class="meta"><span class="venue">ACM SIGMETRICS</span><span class="year">2016</span></span></li>
+<li><span class="title"><a href="https://doi.org/10.1109/infocom.2016.7524489">Detecting and localizing end-to-end performance degradation for cellular data services</a></span><span class="authors">Faraz Ahmed, Jeffrey Erman, <strong>Zihui Ge</strong>, Alex X. Liu, Wang Jia, He Yan</span><span class="meta"><span class="venue">IEEE INFOCOM</span><span class="year">2016</span></span></li>
+<li><span class="title"><a href="https://doi.org/10.1109/infocom.2016.7524486">Libra: Impact assessment of cellular load balancing</a></span><span class="authors">Kanthi Nagaraj, Ajay Anil Mahimkar, <strong>Zihui Ge</strong>, Aman Shaikh, Jia Wang, Kevin Mohr, Mark Stockert</span><span class="meta"><span class="venue">IEEE INFOCOM</span><span class="year">2016</span></span></li>
+<li><span class="title"><a href="https://doi.org/10.1109/cnsm.2016.7818398">Quantifying the service performance impact of self-organizing network actions</a></span><span class="authors">Swati Roy, David Applegate, <strong>Zihui Ge</strong>, Ajay Anil Mahimkar, Shomik Pathak, Sarat C. Puthenpura</span><span class="meta"><span class="venue">CNSM</span><span class="year">2016</span></span></li>
+</ol>
+<h3 class="year-head">2015</h3>
+<ol class="pubs">
+<li><span class="title"><a href="https://doi.org/10.1145/2789168.2790127">ABSENCE: Usage-based Failure Detection in Mobile Networks</a></span><span class="authors">Binh Nguyen, <strong>Zihui Ge</strong>, Jacobus Van der Merwe, He Yan, Jennifer M. Yates</span><span class="meta"><span class="venue">ACM MobiCom</span><span class="year">2015</span></span></li>
+<li><span class="title"><a href="https://doi.org/10.1145/2745844.2745892">Detecting and Localizing End-to-End Performance Degradation for Cellular Data Services</a></span><span class="authors">Faraz Ahmed, Jeffrey Erman, <strong>Zihui Ge</strong>, Alex X. Liu, Jia Wang, He Yan</span><span class="meta"><span class="venue">ACM SIGMETRICS</span><span class="year">2015</span></span></li>
+<li><span class="title"><a href="https://doi.org/10.1145/2716281.2836106">Magus: minimizing cellular service disruption during network upgrades</a></span><span class="authors">Xing Xu, Ioannis Broustis, <strong>Zihui Ge</strong>, Ramesh Govindan, Ajay Anil Mahimkar, N.K. Shankaranarayanan, Jia Wang</span><span class="meta"><span class="venue">ACM CoNEXT</span><span class="year">2015</span></span></li>
+</ol>
+<h3 class="year-head">2014</h3>
+<ol class="pubs">
+<li><span class="title"><a href="https://doi.org/10.1145/2663716.2663733">Crossroads: A Practical Data Sketching Solution for Mining Intersection of Streams</a></span><span class="authors">Zhenglin Yu, <strong>Zihui Ge</strong>, Ashwin Lall, Jia Wang, Jun Jim Xu, He Yan</span><span class="meta"><span class="venue">ACM IMC</span><span class="year">2014</span></span></li>
+<li><span class="title"><a href="https://doi.org/10.1109/ifipnetworking.2014.6857131">NetSearch: Googling large-scale network management data</a></span><span class="authors">Tongqing Qiu, <strong>Zihui Ge</strong>, Dan Pei, Jia Wang, Jun Jim Xu</span><span class="meta"><span class="venue">IFIP Networking</span><span class="year">2014</span></span></li>
+</ol>
+<h3 class="year-head">2013</h3>
+<ol class="pubs">
+<li><span class="title"><a href="https://doi.org/10.1007/978-3-642-36516-4_6">Modeling Cellular User Mobility Using a Leap Graph</a></span><span class="authors">Dong Xu Wei, Nick G. Duffield, <strong>Zihui Ge</strong>, Seungjoon Lee, Jeffrey Pang</span><span class="meta"><span class="venue">Lecture Notes in Computer Science</span><span class="year">2013</span></span></li>
+<li><span class="title"><a href="https://doi.org/10.1109/infcom.2013.6566808">Proactive call drop avoidance in UMTS networks</a></span><span class="authors">Shan Zhou, Jie Yang, Dahai Xu, Guangzhi Li, Yu Jin, <strong>Zihui Ge</strong>, Mario Kosseifi, Robert D. Doverspike, Yingying Jennifer Chen, Lei Ying</span><span class="meta"><span class="venue">IEEE INFOCOM</span><span class="year">2013</span></span></li>
+<li><span class="title"><a href="https://doi.org/10.1145/2535372.2535382">Robust assessment of changes in cellular networks</a></span><span class="authors">Ajay Anil Mahimkar, <strong>Zihui Ge</strong>, Jennifer M. Yates, Chris Hristov, Vincent Cordaro, Shane A. Smith, Jing Xu, Mark Stockert</span><span class="meta"><span class="venue">ACM CoNEXT</span><span class="year">2013</span></span></li>
+</ol>
+<h3 class="year-head">2012</h3>
+<ol class="pubs">
+<li><span class="title"><a href="https://doi.org/10.1007/978-3-642-33338-5_15">ALERT-ID: Analyze Logs of the Network Element in Real Time for Intrusion Detection</a></span><span class="authors">Jie Chu, <strong>Zihui Ge</strong>, Richard Huber, Ping Ji, Jennifer M. Yates, Yung-Chao Yu</span><span class="meta"><span class="venue">Lecture Notes in Computer Science</span><span class="year">2012</span></span></li>
+<li><span class="title"><a href="https://doi.org/10.1109/infcom.2012.6195694">Argus: End-to-end service anomaly detection and localization from an ISP&#x27;s point of view</a></span><span class="authors">He Yan, Ashley Flavel, <strong>Zihui Ge</strong>, Alexandre Gerber, Dan Massey, Christos Papadopoulos, Hiren Shah, Jennifer M. Yates</span><span class="meta"><span class="venue">IEEE INFOCOM</span><span class="year">2012</span></span></li>
+<li><span class="title"><a href="https://doi.org/10.1109/infcom.2012.6195544">Firewall fingerprinting</a></span><span class="authors">Amir R. Khakpour, Joshua W. Hulst, <strong>Zihui Ge</strong>, Alex X. Liu, Dan Pei, Jia Wang</span><span class="meta"><span class="venue">IEEE INFOCOM</span><span class="year">2012</span></span></li>
+<li><span class="title"><a href="https://doi.org/10.1109/tnet.2012.2188837">G-RCA: A Generic Root Cause Analysis Platform for Service Quality Management in Large IP Networks</a></span><span class="authors">He Yan, Lee Breslau, <strong>Zihui Ge</strong>, Dan Massey, Dan Pei, Jennifer M. Yates</span><span class="meta"><span class="venue">IEEE/ACM Transactions on Networking</span><span class="year">2012</span></span></li>
+<li><span class="title"><a href="https://doi.org/10.1109/infcom.2012.6195498">Threshold compression for 3G scalable monitoring</a></span><span class="authors">Suk-Bok Lee, Dan Pei, MohammadTaghi Hajiaghayi, Ioannis Pefkianakis, Songwu Lu, He Yan, <strong>Zihui Ge</strong>, Jennifer M. Yates, Mario Kosseifi</span><span class="meta"><span class="venue">IEEE INFOCOM</span><span class="year">2012</span></span></li>
+</ol>
+<h3 class="year-head">2011</h3>
+<ol class="pubs">
+<li><span class="title"><a href="https://doi.org/10.5555/2043468.2043472">3G Meets the Internet: Understanding the performance of hierarchical routing in 3G networks</a></span><span class="authors">Wei Dong, <strong>Zihui Ge</strong>, Seungjoon Lee</span><span class="meta"><span class="year">2011</span></span></li>
+<li><span class="title"><a href="https://doi.org/10.1145/2018567.2018575">Analyzing IPTV set-top box crashes</a></span><span class="authors">Han Hee Song, <strong>Zihui Ge</strong>, Ajay Anil Mahimkar, Jia Wang, Jennifer M. Yates, Yin Zhang</span><span class="meta"><span class="venue">ACM HomeNets</span><span class="year">2011</span></span></li>
+<li><span class="title"><a href="https://doi.org/10.1145/2068816.2068836">Q-score: proactive service quality assessment in a large IPTV system</a></span><span class="authors">Han Hee Song, <strong>Zihui Ge</strong>, Ajay Anil Mahimkar, Jia Wang, Jennifer M. Yates, Yin Zhang, Andrea Basso, Min Chen</span><span class="meta"><span class="venue">ACM IMC</span><span class="year">2011</span></span></li>
+<li><span class="title"><a href="https://doi.org/10.1145/2079296.2079309">Rapid detection of maintenance induced changes in service performance</a></span><span class="authors">Ajay Anil Mahimkar, <strong>Zihui Ge</strong>, Jia Wang, Jennifer M. Yates, Yin Zhang, Joanne Emmons, Brian John Huntley, Mark Stockert</span><span class="meta"><span class="venue">ACM CoNEXT</span><span class="year">2011</span></span></li>
+<li><span class="title"><a href="https://doi.org/10.1145/1993744.1993793">Scalable monitoring via threshold compression in a large operational 3G network</a></span><span class="authors">Suk-Bok Lee, Dan Pei, MohammadTaghi Hajiaghayi, Ioannis Pefkianakis, Songwu Lu, He Yan, <strong>Zihui Ge</strong>, Jennifer M. Yates, Mario Kosseifi</span><span class="meta"><span class="venue">ACM SIGMETRICS</span><span class="year">2011</span></span></li>
+</ol>
+<h3 class="year-head">2010</h3>
+<ol class="pubs">
+<li><span class="title"><a href="https://doi.org/10.1145/1851182.1851228">Crowdsourcing service-level network event monitoring</a></span><span class="authors">David Choffnes, Fabián E. Bustamante, <strong>Zihui Ge</strong></span><span class="meta"><span class="venue">ACM SIGCOMM</span><span class="year">2010</span></span></li>
+<li><span class="title"><a href="https://doi.org/10.1145/1851182.1851219">Detecting the performance impact of upgrades in large operational networks</a></span><span class="authors">Ajay Anil Mahimkar, Han Hee Song, <strong>Zihui Ge</strong>, Aman Shaikh, Jia Wang, Jennifer M. Yates, Yin Zhang, Joanne Emmons</span><span class="meta"><span class="venue">ACM SIGCOMM</span><span class="year">2010</span></span></li>
+<li><span class="title"><a href="https://doi.org/10.1145/1921168.1921175">G-RCA: a generic root cause analysis platform for service quality management in large IP networks</a></span><span class="authors">He Yan, Lee Breslau, <strong>Zihui Ge</strong>, Dan Massey, Dan Pei, Jennifer M. Yates</span><span class="meta"><span class="venue">ACM CoNEXT</span><span class="year">2010</span></span></li>
+<li><span class="title"><a href="https://doi.org/10.1145/1879141.1879178">Listen to me if you can: tracking user experience of mobile network on social media</a></span><span class="authors">Tongqing Qiu, Junlan Feng, <strong>Zihui Ge</strong>, Jia Wang, Jun Jim Xu, Jennifer M. Yates</span><span class="meta"><span class="venue">ACM IMC</span><span class="year">2010</span></span></li>
+<li><span class="title"><a href="https://doi.org/10.1007/978-1-84882-828-5_12">Network Management: Fault Management, Performance Management, and Planned Maintenance</a></span><span class="authors">Jennifer M. Yates, <strong>Zihui Ge</strong></span><span class="meta"><span class="venue">Book chapter, Springer</span><span class="year">2010</span></span></li>
+<li><span class="title"><a href="https://doi.org/10.1016/j.comnet.2010.06.013">Network prefix-level traffic profiling: Characterizing, modeling, and evaluation</a></span><span class="authors">Hongbo Jiang, <strong>Zihui Ge</strong>, Shudong Jin, Jia Wang</span><span class="meta"><span class="venue">Computer Networks</span><span class="year">2010</span></span></li>
+<li><span class="title"><a href="https://doi.org/10.1145/1879141.1879202">What happened in my network: mining network events from router syslogs</a></span><span class="authors">Tongqing Qiu, <strong>Zihui Ge</strong>, Dan Pei, Jia Wang, Jun Jim Xu</span><span class="meta"><span class="venue">ACM IMC</span><span class="year">2010</span></span></li>
+</ol>
+<h3 class="year-head">2009</h3>
+<ol class="pubs">
+<li><span class="title"><a href="https://doi.org/10.1145/1555349.1555381">Modeling channel popularity dynamics in a large IPTV system</a></span><span class="authors">Tongqing Qiu, <strong>Zihui Ge</strong>, Seungjoon Lee, Jia Wang, Qi Zhao, Jun Jim Xu</span><span class="meta"><span class="venue">ACM SIGMETRICS</span><span class="year">2009</span></span></li>
+<li><span class="title"><a href="https://doi.org/10.1145/1644893.1644945">Modeling user activities in a large IPTV system</a></span><span class="authors">Tongqing Qiu, <strong>Zihui Ge</strong>, Seungjoon Lee, Jia Wang, Jun Jim Xu, Qi Zhao</span><span class="meta"><span class="venue">ACM IMC</span><span class="year">2009</span></span></li>
+<li><span class="title"><a href="https://doi.org/10.1145/1592568.1592596">Towards automated performance diagnosis in a large IPTV network</a></span><span class="authors">Ajay Anil Mahimkar, <strong>Zihui Ge</strong>, Aman Shaikh, Jia Wang, Jennifer M. Yates, Yin Zhang, Qi Zhao</span><span class="meta"><span class="venue">ACM SIGCOMM</span><span class="year">2009</span></span></li>
+</ol>
+<h3 class="year-head">2008</h3>
+<ol class="pubs">
+<li><span class="title"><a href="https://doi.org/10.1214/074921708000000390">Internet Traffic and Multiresolution Analysis</a></span><span class="authors">Ying Zhang, <strong>Zihui Ge</strong>, Suhas N. Diggavi, Zhuoqing Morley Mao, Matthew Roughan, Vinay A. Vaishampayan, Walter Willinger, Yin Zhang</span><span class="meta"><span class="venue">IMS Collections</span><span class="year">2008</span></span></li>
+<li><span class="title"><a href="https://doi.org/10.1145/1544012.1544014">Troubleshooting chronic conditions in large IP networks</a></span><span class="authors">Ajay Anil Mahimkar, Jennifer M. Yates, Yin Zhang, Aman Shaikh, Jia Wang, <strong>Zihui Ge</strong>, Cheng Tien Ee</span><span class="meta"><span class="venue">ACM CoNEXT</span><span class="year">2008</span></span></li>
+</ol>
+<h3 class="year-head">2007</h3>
+<ol class="pubs">
+<li><span class="title"><a href="https://doi.org/10.1109/tnet.2007.892849">A Comparison of Hard-State and Soft-State Signaling Protocols</a></span><span class="authors">Ping Ji, <strong>Zihui Ge</strong>, Jim Kurose, Don Towsley</span><span class="meta"><span class="venue">IEEE/ACM Transactions on Networking</span><span class="year">2007</span></span></li>
+<li><span class="title"><a href="https://doi.org/10.1007/s00530-007-0092-y">Design and analysis of a demand adaptive and locality aware streaming media server cluster</a></span><span class="authors"><strong>Zihui Ge</strong>, Ping Ji, Prashant J. Shenoy</span><span class="meta"><span class="venue">Multimedia Systems</span><span class="year">2007</span></span></li>
+<li><span class="title"><a href="https://doi.org/10.1109/glocom.2007.521">Joint Traffic Blocking and Routing Under Network Failures and Maintenances</a></span><span class="authors">Chao Liang, <strong>Zihui Ge</strong>, Yong Liu</span><span class="meta"><span class="venue">IEEE GLOBECOM</span><span class="year">2007</span></span></li>
+<li><span class="title"><a href="https://doi.org/10.1145/1321753.1321771">Lightweight application classification for network management</a></span><span class="authors">Hongbo Jiang, Andrew William Moore, <strong>Zihui Ge</strong>, Shudong Jin, Jia Wang</span><span class="meta"><span class="venue">ACM INM Workshop</span><span class="year">2007</span></span></li>
+<li><span class="title">OPTWALL: A Hierarchical Traffic-Aware Firewall</span><span class="authors">Subrata Acharya, Bryan Mills, Mehmud Abliz, Taieb F. Znati, Jia Wang, <strong>Zihui Ge</strong>, Albert G. Greenberg</span><span class="meta"><span class="venue">NDSS</span><span class="year">2007</span></span></li>
+<li><span class="title">Towards Robust Firewalls Using Approximate Packet Classification</span><span class="authors">Qunfeng Dong, Dheeraj Agrawal, <strong>Zihui Ge</strong>, Jia Wang, Jianming Wu, Suman Banerjee</span><span class="meta"><span class="venue">Technical Report, University of Wisconsin</span><span class="year">2007</span></span></li>
+</ol>
+<h3 class="year-head">2006</h3>
+<ol class="pubs">
+<li><span class="title"><a href="https://doi.org/10.1007/1-4020-2258-1_10">Dynamic Cache Reconfiguration Strategies for a Cluster-Based Streaming Proxy</a></span><span class="authors">Yang Guo, <strong>Zihui Ge</strong>, Bhuvan Urgaonkar, Prashant J. Shenoy, Don Towsley</span><span class="meta"><span class="venue">Book chapter, Kluwer Academic</span><span class="year">2006</span></span></li>
+<li><span class="title"><a href="https://doi.org/10.1109/icnp.2005.30">Optimal Routing with Multiple Traffic Matrices Tradeoff between Average andWorst Case Performance</a></span><span class="authors">Chun Zhanga, Jim Kurosea, Don Towsley, <strong>Zihui Ge</strong>, Yong Liu</span><span class="meta"><span class="venue">IEEE ICNP</span><span class="year">2006</span></span></li>
+<li><span class="title"><a href="https://doi.org/10.1109/icnp.2005.31">Optimizing Event Distribution in Publish/Subscribe Systems in the Presence of Policy-Constraints and Composite Events</a></span><span class="authors">Weifeng Chen, James F. Kurose, Don Towsley, <strong>Zihui Ge</strong></span><span class="meta"><span class="venue">IEEE ICNP</span><span class="year">2006</span></span></li>
+<li><span class="title"><a href="https://doi.org/10.1109/infocom.2006.59">Path Protection Routing with SRLG Constraints to Support IPTV in WDM Mesh Networks</a></span><span class="authors">Meeyoung Cha, Wanpracha Art Chaovalitwongse, <strong>Zihui Ge</strong>, Jennifer M. Yates, Sue B. Moon</span><span class="meta"><span class="venue">IEEE INFOCOM</span><span class="year">2006</span></span></li>
+<li><span class="title"><a href="https://doi.org/10.1145/1140277.1140294">Robust traffic matrix estimation with imperfect information: making use of multiple data sources</a></span><span class="authors">Qi Zhao, <strong>Zihui Ge</strong>, Jia Wang, Jun Jim Xu</span><span class="meta"><span class="venue">ACM SIGMETRICS</span><span class="year">2006</span></span></li>
+<li><span class="title"><a href="https://doi.org/10.1109/anss.2006.42">Simulation Study of Firewalls to Aid Improved Performance</a></span><span class="authors">Subrata Acharya, Jia Wang, <strong>Zihui Ge</strong>, Taieb F. Znati, Albert G. Greenberg</span><span class="meta"><span class="venue">IEEE ANSS</span><span class="year">2006</span></span></li>
+<li><span class="title"><a href="https://doi.org/10.1109/icc.2006.255101">Traffic-Aware Firewall Optimization Strategies</a></span><span class="authors">Subrata Acharya, Jia Wang, <strong>Zihui Ge</strong>, Taieb F. Znati, Albert G. Greenberg</span><span class="meta"><span class="venue">IEEE ICC</span><span class="year">2006</span></span></li>
+</ol>
+<h3 class="year-head">2005</h3>
+<ol class="pubs">
+<li><span class="title"><a href="https://doi.org/10.1109/icnp.2001.992889">Channelization problem in large scale data dissemination</a></span><span class="authors">Micah Adler, <strong>Zihui Ge</strong>, Jim Kurose, Don Towsley, Stephen Zabele</span><span class="meta"><span class="venue">IEEE ICNP</span><span class="year">2005</span></span></li>
+<li><span class="title"><a href="https://doi.org/10.1016/j.comcom.2005.09.017">Dynamic cache reconfiguration strategies for cluster-based streaming proxy</a></span><span class="authors">Yang Guo, <strong>Zihui Ge</strong>, Bhuvan Urgaonkar, Prashant J. Shenoy, Don Towsley</span><span class="meta"><span class="venue">Computer Communications</span><span class="year">2005</span></span></li>
+<li><span class="title"><a href="https://doi.org/10.1109/dsn.2005.51">Finding Critical Traffic Matrices</a></span><span class="authors">Yin Zhang, <strong>Zihui Ge</strong></span><span class="meta"><span class="venue">IEEE/IFIP DSN</span><span class="year">2005</span></span></li>
+<li><span class="title"><a href="https://doi.org/10.1109/glocom.2004.1378102">Index-server optimization for P2P file sharing in mobile ad hoc networks</a></span><span class="authors">Chikara Ohta, <strong>Zihui Ge</strong>, Yang Guo, Jim Kurose</span><span class="meta"><span class="venue">IEEE GLOBECOM</span><span class="year">2005</span></span></li>
+<li><span class="title"><a href="https://doi.org/10.1145/1330107.1330146">Network anomography</a></span><span class="authors">Yin Zhang, <strong>Zihui Ge</strong>, Albert G. Greenberg, Matthew Roughan</span><span class="meta"><span class="venue">ACM IMC</span><span class="year">2005</span></span></li>
+</ol>
+<h3 class="year-head">2004</h3>
+<ol class="pubs">
+<li><span class="title"><a href="https://doi.org/10.1109/icnp.2003.1249773">Matchmaker: signaling for dynamic publish/subscribe applications</a></span><span class="authors"><strong>Zihui Ge</strong>, Ping Ji, Jim Kurose, Don Towsley</span><span class="meta"><span class="venue">IEEE ICNP</span><span class="year">2004</span></span></li>
+<li><span class="title"><a href="https://doi.org/10.1109/infcom.2003.1209239">Modeling peer-peer file sharing systems</a></span><span class="authors"><strong>Zihui Ge</strong>, Daniel R. Figueiredo, Sharad K. Jaiswal, Jim Kurose, Don Towsley</span><span class="meta"><span class="venue">IEEE INFOCOM</span><span class="year">2004</span></span></li>
+<li><span class="title"><a href="https://doi.org/10.1007/978-3-540-24693-0_61">On Dynamic Subset Difference Revocation Scheme</a></span><span class="authors">Weifeng Chen, <strong>Zihui Ge</strong>, Chun Zhang, Jim Kurose, Don Towsley</span><span class="meta"><span class="venue">Lecture Notes in Computer Science</span><span class="year">2004</span></span></li>
+</ol>
+<h3 class="year-head">2003</h3>
+<ol class="pubs">
+<li><span class="title"><a href="https://doi.org/10.1145/863955.863984">A comparison of hard-state and soft-state signaling protocols</a></span><span class="authors">Ping Ji, <strong>Zihui Ge</strong>, Jim Kurose, Don Towsley</span><span class="meta"><span class="venue">ACM SIGCOMM</span><span class="year">2003</span></span></li>
+<li><span class="title">Interest-based content retrieval and dissemination in distributed environments</span><span class="authors"><strong>Zihui Ge</strong></span><span class="meta"><span class="venue">Ph.D. Dissertation, University of Massachusetts Amherst</span><span class="year">2003</span></span></li>
+<li><span class="title"><a href="https://doi.org/10.1016/s0166-5316(03)00104-4">Modeling frame-level errors in GSM wireless channels</a></span><span class="authors">Ping Ji, Benyuan Liu, Don Towsley, <strong>Zihui Ge</strong>, Jim Kurose</span><span class="meta"><span class="venue">Performance Evaluation</span><span class="year">2003</span></span></li>
+<li><span class="title"><a href="https://doi.org/10.1109/dance.2002.1003507">SANDS: Specialized Active Networking for Distributed Simulation</a></span><span class="authors">Stephen Zabele, M. Dorsch, <strong>Zihui Ge</strong>, Ping Ji, M. Keaton, Jim Kurose, Jonathan K. Shapiro, Don Towsley</span><span class="meta"><span class="venue">DARPA DANCE</span><span class="year">2003</span></span></li>
+</ol>
+<h3 class="year-head">2002</h3>
+<ol class="pubs">
+<li><span class="title"><a href="https://doi.org/10.1145/507670.507690">A Demand Adaptive and Locality Aware (DALA) streaming media server cluster architecture</a></span><span class="authors"><strong>Zihui Ge</strong>, Ping Ji, Prashant J. Shenoy</span><span class="meta"><span class="venue">ACM NOSSDAV</span><span class="year">2002</span></span></li>
+<li><span class="title">Network Resilience: Exploring Cascading Failures with BGP</span><span class="authors">Coffman, E. G., Jr., <strong>Zihui Ge</strong>, Vishal Misra, Don Towsley</span><span class="meta"><span class="venue">Technical Report, University of Illinois</span><span class="year">2002</span></span></li>
+</ol>
+<h3 class="year-head">2001</h3>
+<ol class="pubs">
+<li><span class="title"><a href="https://doi.org/10.1117/12.434397">Hierarchical structure of the logical Internet graph</a></span><span class="authors"><strong>Zihui Ge</strong>, Daniel R. Figueiredo, Sharad K. Jaiswal, Lixin Gao</span><span class="meta"><span class="venue">Proceedings of SPIE</span><span class="year">2001</span></span></li>
+</ol>
+      </div>
+      <p class="note">This list is generated from the OpenAlex record, with duplicate entries removed. Titles link to the DOI where one exists.</p>
+    </details>
+  </section>
+</main>
+
+<footer class="wrap">
+  © Zihui Ge
+</footer>
+
+<script>
+  (function () {
+    var input = document.querySelector('.filter');
+    if (!input) return;
+    var list = document.querySelector('.all-list');
+    input.addEventListener('input', function () {
+      var q = input.value.trim().toLowerCase();
+      list.querySelectorAll('ol.pubs').forEach(function (ol) {
+        var visible = 0;
+        ol.querySelectorAll('li').forEach(function (li) {
+          var head = ol.previousElementSibling;
+          var hay = (li.textContent + ' ' + (head ? head.textContent : '')).toLowerCase();
+          var show = !q || hay.indexOf(q) !== -1;
+          li.hidden = !show;
+          if (show) visible++;
+        });
+        var head = ol.previousElementSibling;
+        if (head && head.classList.contains('year-head')) head.hidden = visible === 0;
+      });
+    });
+  })();
+</script>
+</body>
+</html>
