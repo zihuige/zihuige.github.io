@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Zihui Ge — Director, Inventive Science, AT&amp;T Labs</title>
-<meta name="description" content="Zihui Ge — Director of Inventive Science at AT&amp;T Labs, working on data-driven analytics and automation for large-scale cellular and IP networks.">
+<meta name="description" content="Zihui Ge — Director of Inventive Science at AT&amp;T Labs, working on AI/ML, agentic automation, and data-driven analytics for large-scale network operations.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -130,6 +130,27 @@
   .filter:focus { outline: 2px solid var(--accent); outline-offset: 1px; }
   .note { font-size: 0.82rem; color: var(--ink-3); margin-top: 16px; }
 
+
+  /* Building section */
+  .feature {
+    border: 1px solid var(--rule); border-left: 3px solid var(--accent);
+    background: var(--accent-soft); border-radius: 10px; padding: 22px 24px; margin-bottom: 28px;
+  }
+  .feature .tag { font: 600 0.72rem/1 var(--sans); letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); }
+  .feature h3 { font: 500 1.45rem/1.25 var(--serif); margin: 8px 0 10px; color: var(--ink); }
+  .feature p { margin: 0 0 12px; color: var(--ink-2); }
+  .feature-list li { border-top-color: color-mix(in srgb, var(--accent) 18%, var(--rule)); }
+  .feature .refs { font-size: 0.85rem; margin: 12px 0 0; color: var(--ink-3); }
+  .feature-list li b { color: var(--ink); font-weight: 600; }
+  .cols { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 28px; }
+  .cols h3 { font: 600 1.05rem/1.3 var(--serif); margin: 0 0 10px; color: var(--ink); }
+  .checks { list-style: none; margin: 0; padding: 0; }
+  .checks li { position: relative; padding: 6px 0 6px 22px; color: var(--ink-2); font-size: 0.95rem; border-top: 1px solid var(--rule); }
+  .checks li:first-child { border-top: 0; }
+  .checks li::before { content: ""; position: absolute; left: 2px; top: 15px; width: 8px; height: 8px; border-radius: 2px; background: var(--accent); }
+  .chips { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 14px; }
+  .chips span { font-size: 0.78rem; font-weight: 500; padding: 4px 10px; border-radius: 999px; background: var(--surface); border: 1px solid var(--rule); color: var(--ink-2); }
+
   footer { padding-block: 32px 56px; color: var(--ink-3); font-size: 0.82rem; }
 
   @media (max-width: 560px) {
@@ -143,9 +164,10 @@
 <div class="wrap">
   <header class="hero">
     <h1>Zihui Ge</h1>
-    <p class="role">Director – Inventive Science, AT&amp;T Labs – Research · Bedminster, New Jersey.<br>Data-driven analytics and automation for large-scale cellular and IP networks.</p>
+    <p class="role">Director – Inventive Science, AT&amp;T Labs – Operations Analytics and Automation Department · Bedminster, New Jersey.<br>AI/ML, agentic automation, and data-driven analytics for large-scale network operations.</p>
     <ul class="links">
       <li><a href="mailto:gezihui@gmail.com">gezihui@gmail.com</a></li>
+      <li><a href="cv.pdf">CV (PDF)</a></li>
       <li><a href="https://www.linkedin.com/in/gezihui/">LinkedIn</a></li>
       <li><a href="https://orcid.org/0000-0003-0114-7584">ORCID</a></li>
       <li><a href="https://www.researchgate.net/profile/Zihui-Ge">ResearchGate</a></li>
@@ -158,6 +180,7 @@
 <nav class="toc" aria-label="Sections">
   <ul>
     <li><a href="#about">About</a></li>
+    <li><a href="#building">Building</a></li>
     <li><a href="#research">Research</a></li>
     <li><a href="#experience">Experience</a></li>
     <li><a href="#education">Education</a></li>
@@ -169,13 +192,53 @@
   <section id="about">
     <h2>About</h2>
     <p class="lede">I have spent two decades as a researcher and research manager, creating AI/ML and data-analytics technologies that solve critical business problems in running one of the world's largest networks.</p>
-    <p>At AT&amp;T Labs – Research, I lead work that turns operational data from cellular and IP networks into practical tools. These tools assess the impact of network changes and upgrades, find the root cause of service problems, detect anomalies, and recommend configurations for LTE and 5G radio networks. I use design thinking to reach practical, effective solutions, and most of my inventions have been built into software systems deployed in real business operations. The research has been published at venues including ACM SIGCOMM, MobiCom, IMC, CoNEXT, SIGMETRICS, and IEEE INFOCOM.</p>
+    <p>At AT&amp;T Labs, I lead work that turns operational data from cellular and IP networks into practical tools. These tools assess the impact of network changes and upgrades, find the root cause of service problems, detect anomalies, and recommend configurations for LTE and 5G radio networks. I use design thinking to reach practical, effective solutions, and most of my inventions have been built into software systems deployed in real business operations. The research has been published at venues including ACM SIGCOMM, MobiCom, IMC, CoNEXT, SIGMETRICS, and IEEE INFOCOM.</p>
     <p>I am an inventor or co-inventor on over 50 US patents (<a href="https://www.patentleaderboard.com/att/zihui-ge/47105">see list</a>). I am a skilled full-stack software developer, and I manage a team of creative researchers who work together to deliver strong business results. I also enjoy mentoring research interns and working with academic collaborators.</p>
     <div class="stats">
       <div class="stat"><b>79</b><span>publications, 2001–2025</span></div>
       <div class="stat"><b>50+</b><span>US patents</span></div>
       <div class="stat"><b>20+</b><span>years in research &amp; research management</span></div>
       <div class="stat"><b>Ph.D.</b><span>Computer Science, UMass Amherst</span></div>
+    </div>
+  </section>
+
+  <section id="building">
+    <h2>Building &amp; Impact</h2>
+    <div class="feature">
+      <span class="tag">Agentic AI</span>
+      <h3>Agentic RCA engine</h3>
+      <p>I designed a new architecture for an agentic root cause analysis (RCA) engine that troubleshoots network and service issues and gets better with every investigation. It works in two layers:</p>
+      <ul class="checks feature-list">
+        <li><b>Expert operators working with AI agents.</b> Operators direct AI agents that gather evidence across telemetry, alarms, and logs, test hypotheses, correlate findings, and arrive at a root cause and next step.</li>
+        <li><b>A super agent that learns from each investigation.</b> Meanwhile, a super agent builds a library of reusable tools and visualizations, and discovers and defines diagnostic workflows for future investigations.</li>
+      </ul>
+    </div>
+    <div class="feature">
+      <span class="tag">Advanced AI/ML</span>
+      <h3>ML-powered RAN parameter tuning</h3>
+      <p>Over several years of research and production iterations, I developed AI/ML that mines the "best practices" behind how RAN (Radio Access Network) engineers tune cell-site performance. AI/ML then predicts the cell sites where a tuning will effectively improve customer experience, then deploys the tuning and monitors the results. It runs in AT&amp;T's production network today.</p>
+      <p class="refs">Research behind it:
+        <a href="https://doi.org/10.1145/3452296.3472906">Auric (SIGCOMM 2021)</a> ·
+        <a href="https://doi.org/10.1145/3517745.3561455">Aurora (IMC 2022)</a> ·
+        <a href="https://doi.org/10.1145/3570361.3613256">Chroma (MobiCom 2023)</a> ·
+        <a href="https://doi.org/10.1145/3709378">Iridescence (PACMNET 2025)</a></p>
+    </div>
+    <div class="cols">
+      <div>
+        <h3>Rapid prototyping &amp; full-stack development</h3>
+        <p>I take ideas from concept to working system quickly. I build end-to-end, covering data pipelines, analytics and ML models, back-end services, and user-facing applications, with a focus on AI/ML and agentic automation.</p>
+        <div class="chips"><span>AI / ML</span><span>Agentic automation</span><span>LLM agents</span><span>Data analytics</span><span>Full-stack development</span><span>Rapid prototyping</span><span>Design thinking</span></div>
+      </div>
+      <div>
+        <h3>Deployed in production network operations</h3>
+        <ul class="checks">
+          <li>Fault and performance problem detection</li>
+          <li>Event correlation and triage</li>
+          <li>Operational prioritization</li>
+          <li>Dispatch management</li>
+          <li>Auditing and quality assurance</li>
+        </ul>
+      </div>
     </div>
   </section>
 
@@ -208,7 +271,7 @@
   <section id="experience">
     <h2>Experience</h2>
     <ul class="timeline">
-      <li><span class="when">Sep 2017 – present</span><span class="what"><b>Director – Inventive Science</b><span>AT&amp;T Labs – Research</span></span></li>
+      <li><span class="when">Sep 2017 – present</span><span class="what"><b>Director – Inventive Science</b><span>AT&amp;T Labs – Operations Analytics and Automation Department</span></span></li>
       <li><span class="when">Nov 2013 – Sep 2017</span><span class="what"><b>Lead Inventive Scientist</b><span>AT&amp;T Labs – Research</span></span></li>
       <li><span class="when">May 2008 – Nov 2013</span><span class="what"><b>Principal Member of Technical Staff</b><span>AT&amp;T Labs – Research</span></span></li>
       <li><span class="when">Feb 2007 – May 2008</span><span class="what"><b>Research Scientist – Director of Search Engine Research</b><span>Adverplex</span></span></li>
